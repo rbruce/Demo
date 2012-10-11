@@ -37,9 +37,9 @@ public class DemoCommandExecutor implements CommandExecutor {
 			// necessarily where the player is looking
 		} else if (args[0].equalsIgnoreCase("cake")) {
 			Player fred = (Player) sender;
-			Location loc = fred.getLocation();
+			Location loc = fred.getEyeLocation();
 			World w = loc.getWorld();
-			loc.setX(loc.getX() + 1);
+			loc.setX(loc.getX());
 			Block b = w.getBlockAt(loc);
 			b.setTypeId(92);
 			return true;
