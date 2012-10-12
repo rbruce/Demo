@@ -51,6 +51,18 @@ public class DemoCommandExecutor implements CommandExecutor {
 			this.plugin.getConfig().set("sample.message",
 					Joiner.on(' ').join(args));
 			return true;
+		} else if (args[0].equalsIgnoreCase("rain")
+				&& sender.hasPermission("demo.rain")) {
+			Player fred = (Player) sender;
+			Location loc = fred.getBedSpawnLocation();
+			if (loc instanceof Location) {
+				fred.teleport(loc);
+				fred.sendMessage("go to bed it might rain");
+			} else {
+				// got to do something else here
+				fred.sendMessage("sorry, no rain right now");
+			}
+			return true;
 		} else {
 			return false;
 		}

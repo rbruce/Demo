@@ -19,4 +19,6 @@ permissions:
         description: gives permission to set the sample message using the sample command
       demo.cake:
         description: give the player a block of cake
+      demo.rain:
+        description: teleport to bed
 
